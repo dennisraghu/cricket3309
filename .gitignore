@@ -15,6 +15,11 @@ target/*
 !.vscode/extensions.json
 _site/
 
+# Cricket IPL app
+cricket-ipl/frontend/node_modules/
+cricket-ipl/frontend/build/
+cricket-ipl/backend/target/
+
 # Python — Find out about yourself
 find_about_yourself/.venv/
 find_about_yourself/profiles.sqlite
