@@ -1,0 +1,72 @@
+{
+  "info": {
+    "_postman_id": "cf5c21f6-8967-429f-9e35-a86902d3271d",
+    "name": "New Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "https://postman-echo.com/post",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "56ddf2ce-99a7-4315-ab53-9a72320686a2",
+            "exec": [
+              "const jsonData = pm.response.json();",
+              "const name = jsonData.json.name;",
+              "",
+              "pm.test(\"Response received\", function() {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "const template = `",
+              "<html>",
+              "<body style=\"font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background: #f0f4f8;\">",
+              "  <div style=\"text-align: center; padding: 40px; background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);\">",
+              "    <h1 style=\"color: #FF6C37; font-size: 2.5em;\">Hello, ${name}! 👋</h1>",
+              "    <p style=\"color: #666;\">Your greeting has been generated successfully.</p>",
+              "  </div>",
+              "</body>",
+              "</html>",
+              "`;",
+              "pm.visualizer.set(template);"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "id": "7ea49b1a-b22e-4aba-96da-0c2dd9099a95",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\": \"John\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://postman-echo.com/post",
+          "protocol": "https",
+          "host": [
+            "postman-echo",
+            "com"
+          ],
+          "path": [
+            "post"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
